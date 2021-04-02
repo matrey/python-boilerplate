@@ -28,5 +28,5 @@ setup(
     #
     packages=find_packages(exclude=["contrib", "docs", "tests"]),  # Required
     python_requires=">=3.9",
-    install_requires=[], #                  <<< EDIT THIS <<<
+    install_requires=[],  # To fill         <<< EDIT THIS <<<
 )
