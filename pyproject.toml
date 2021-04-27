@@ -1,0 +1,32 @@
+[project]
+name = ""
+description = ""
+version = "0.0.1"
+requires-python = ">= 3.9"
+dependencies = [""]
+
+[tool.flakehell]
+extended_default_ignore=[] # until https://github.com/flakehell/flakehell/issues/10 is fixed
+max-line-length = 88
+exclude = [".git", "__pycache__", ".mypy_cache", ".venv"]
+
+[tool.flakehell.plugins]
+pyflakes = ["+*", "-F401", "-F403"]
+pycodestyle = ["+*", "-E203", "-E266", "-E501", "-W503"]
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+line_length = 88
+force_grid_wrap = 0
+use_parentheses = true
+
+[mypy]
+# mypy doesn't support pyproject.toml yet, but just wants an ini file with a [mypy].
+# So we can just add a [mypy] block (*not* [tool.mypy]) and call mypy --config-file pyproject.toml
+# & track https://github.com/python/mypy/issues/5205 for native pyproject support
+# Remark: we need to make sure pyproject.toml also works as an ini file (e.g. no "pretty print" over several lines for lists)
+python_version = 3.9
+ignore_missing_imports = true
+exclude = "build/"
+

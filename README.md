@@ -2,7 +2,7 @@
 
 
 ```bash
-for infile in .flake8 .gitignore .isort.cfg Makefile mypy.ini requirements-dev.txt setup.py; do 
+for infile in .gitignore Makefile pyproject.toml; do 
   if [[ -f "${infile}" ]]; then 
     echo "Skipping existing file ${infile}"
   else
