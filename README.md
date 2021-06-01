@@ -11,5 +11,4 @@ for infile in .gitignore Makefile pyproject.toml; do
   fi
 done
 make venv install-dev 
-touch README.md requirements.txt
 ```
