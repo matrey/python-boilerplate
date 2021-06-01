@@ -5,7 +5,7 @@ venv:
 	.venv/bin/pip install wheel toml
 
 install:
-	.venv/bin/python3 -c 'import toml; c = toml.load("pyproject.toml"); print("\\0".join(c["project"]["dependencies"]), end="")' | xargs -0 .venv/bin/pip install --prefer-binary
+	.venv/bin/python3 -c 'import toml; c = toml.load("pyproject.toml"); print("\0".join(c["project"]["dependencies"]), end="")' | xargs -0 .venv/bin/pip install --prefer-binary
 
 install-dev:
 	.venv/bin/pip install --prefer-binary black isort mypy flakehell flit
