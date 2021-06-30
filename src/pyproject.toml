@@ -21,11 +21,7 @@ line_length = 88
 force_grid_wrap = 0
 use_parentheses = true
 
-[mypy]
-# mypy doesn't support pyproject.toml yet, but just wants an ini file with a [mypy].
-# So we can just add a [mypy] block (*not* [tool.mypy]) and call mypy --config-file pyproject.toml
-# & track https://github.com/python/mypy/issues/5205 for native pyproject support
-# Remark: we need to make sure pyproject.toml also works as an ini file (e.g. no "pretty print" over several lines for lists)
+[tool.mypy]
 python_version = 3.9
 ignore_missing_imports = true
 exclude = "build/"

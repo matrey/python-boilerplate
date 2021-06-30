@@ -1,5 +1,7 @@
 venv:
-	# You might need to do this first: sudo apt-get install python3.9-venv
+	# You might need to do this first:
+	# sudo add-apt-repository ppa:deadsnakes/ppa
+	# sudo apt-get install python3.9-venv
 	python3.9 -m venv .venv
 	.venv/bin/pip install --upgrade pip
 	.venv/bin/pip install wheel toml
@@ -14,5 +16,5 @@ lint:
 	.venv/bin/isort .
 	.venv/bin/black $(shell pwd)
 	.venv/bin/flakehell lint $(shell pwd)
-	.venv/bin/mypy --config-file pyproject.toml $(shell pwd)
+	.venv/bin/mypy $(shell pwd)
 
