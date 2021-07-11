@@ -5,6 +5,14 @@ version = "0.0.1"
 requires-python = ">= 3.9"
 dependencies = [""]
 
+[project.optional-dependencies]
+dev = [
+  "black",
+  "isort",
+  "mypy",
+  "flakehell"
+]
+
 [tool.flakehell]
 extended_default_ignore=[] # until https://github.com/flakehell/flakehell/issues/10 is fixed
 max-line-length = 88
